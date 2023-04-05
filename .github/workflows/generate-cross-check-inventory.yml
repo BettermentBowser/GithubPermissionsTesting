@@ -1,6 +1,13 @@
 name: 'Generate cross check inventory on cross check change'
 
-on: pull_request
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches-ignore:
+      - main
 jobs:
   my-job:
     runs-on: ubuntu-latest
